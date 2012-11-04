@@ -28,7 +28,6 @@ typedef enum {
 {
     CGPoint     _panStartLocation;
     NSTimer*    _caretShiftTimer;
-    BOOL        _textInputScrollEnabled;
     
     CaretShiftDirection  _caretShiftDirection;
 }
@@ -55,15 +54,8 @@ typedef enum {
 
 - (void)setTextInput:(UIView <UITextInput> *)textInput
 {
-    if ([[self class] isValidTextInput:textInput])  {
-        
+    if ([[self class] isValidTextInput:textInput] || !textInput)  {
         _textInput = textInput;
-        
-        // wait for UITextView scroll to fail
-        for (UIGestureRecognizer* gesture in textInput.gestureRecognizers) {
-            [self requireGestureRecognizerToFail:gesture];
-        }
-
     }
     else {
         [NSException raise:NSInvalidArgumentException
@@ -128,21 +120,6 @@ typedef enum {
 {
     if (!_caretShiftTimer) {
         _caretShiftTimer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(shiftCaret) userInfo:nil repeats:YES];
-        
-        // for UITextView
-        if ([_textInput isKindOfClass:[UIScrollView class]]) {
-            
-            UIScrollView* scrollableTextInput = (UIScrollView*)_textInput;
-            
-            // disable scroll while _caretShiftTimer is active
-            _textInputScrollEnabled = scrollableTextInput.scrollEnabled;
-            scrollableTextInput.scrollEnabled = NO;
-                        
-            if (scrollableTextInput.dragging || scrollableTextInput.decelerating) {
-                [self stopCaretShiftTimer];
-                return;
-            }
-        }
     }
 }
 
@@ -153,12 +130,6 @@ typedef enum {
     if (_caretShiftTimer) {
         [_caretShiftTimer invalidate];
         _caretShiftTimer = nil;
-        
-        // for UITextView
-        if ([_textInput isKindOfClass:[UIScrollView class]]) {
-            UIScrollView* scrollableTextInput = (UIScrollView*)_textInput;
-            scrollableTextInput.scrollEnabled = _textInputScrollEnabled;
-        }
     }
     
     _caretShiftDirection = CaretShiftDirectionNone;

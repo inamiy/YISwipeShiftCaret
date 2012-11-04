@@ -40,8 +40,18 @@
 {
     if ([YISwipeShiftCaretGestureRecognizer isValidTextInput:self]) {
         
+        UIView* installingView = self;
+        
+        //
+        // For UITextView, conflicting with UIScrollViewPanGestureRecognizer is an annoying issue,
+        // so let's add caret-gesture to its superview instead for better performance & simpler code.
+        //
+        if ([self isKindOfClass:[UIScrollView class]]) {
+            installingView = self.superview;
+        }
+        
         BOOL alreadyInstalled = NO;
-        for (UIGestureRecognizer* gesture in self.gestureRecognizers) {
+        for (UIGestureRecognizer* gesture in installingView.gestureRecognizers) {
             if ([gesture isKindOfClass:[YISwipeShiftCaretGestureRecognizer class]]) {
                 alreadyInstalled = YES;
                 break;
@@ -50,7 +60,7 @@
         
         if (!alreadyInstalled) {
             YISwipeShiftCaretGestureRecognizer* gesture = [[YISwipeShiftCaretGestureRecognizer alloc] initWithTextInput:(UIView <UITextInput> *)self];
-            [self addGestureRecognizer:gesture];
+            [installingView addGestureRecognizer:gesture];
         }
         
     }

@@ -319,6 +319,7 @@
 				1FABE71D1644F1C800663C22 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

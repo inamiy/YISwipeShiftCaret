@@ -30,10 +30,18 @@
 {
     [super touchesBegan:touches withEvent:event];
     
-    for (UIView* subview in self.view.subviews) {
+    [self findFirstResponderAndResignInView:self.view];
+}
+
+- (void)findFirstResponderAndResignInView:(UIView*)view
+{
+    for (UIView* subview in view.subviews) {
         if ([subview isFirstResponder]) {
             [subview resignFirstResponder];
             break;
+        }
+        else {
+            [self findFirstResponderAndResignInView:subview];
         }
     }
 }

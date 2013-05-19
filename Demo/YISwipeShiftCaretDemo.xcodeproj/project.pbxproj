@@ -18,9 +18,7 @@
 		1FABE7121644F1C800663C22 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1FABE7111644F1C800663C22 /* Default-568h@2x.png */; };
 		1FABE7151644F1C800663C22 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FABE7131644F1C800663C22 /* MainStoryboard.storyboard */; };
 		1FABE7181644F1C800663C22 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FABE7171644F1C800663C22 /* ViewController.m */; };
-		1FABE72F1644F86300663C22 /* UITextField+YISwipeShiftCaret.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FABE72A1644F86300663C22 /* UITextField+YISwipeShiftCaret.m */; };
-		1FABE7301644F86300663C22 /* YISwipeShiftCaret.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FABE72C1644F86300663C22 /* YISwipeShiftCaret.m */; };
-		1FABE7311644F86300663C22 /* YISwipeShiftCaretGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1FABE72E1644F86300663C22 /* YISwipeShiftCaretGestureRecognizer.m */; };
+		365C1AA3A88D4153B0F9745A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E84443AD9442758640DF0C /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,12 +38,8 @@
 		1FABE7141644F1C800663C22 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		1FABE7161644F1C800663C22 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		1FABE7171644F1C800663C22 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1FABE7291644F86300663C22 /* UITextField+YISwipeShiftCaret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+YISwipeShiftCaret.h"; sourceTree = "<group>"; };
-		1FABE72A1644F86300663C22 /* UITextField+YISwipeShiftCaret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+YISwipeShiftCaret.m"; sourceTree = "<group>"; };
-		1FABE72B1644F86300663C22 /* YISwipeShiftCaret.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YISwipeShiftCaret.h; sourceTree = "<group>"; };
-		1FABE72C1644F86300663C22 /* YISwipeShiftCaret.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YISwipeShiftCaret.m; sourceTree = "<group>"; };
-		1FABE72D1644F86300663C22 /* YISwipeShiftCaretGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YISwipeShiftCaretGestureRecognizer.h; sourceTree = "<group>"; };
-		1FABE72E1644F86300663C22 /* YISwipeShiftCaretGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YISwipeShiftCaretGestureRecognizer.m; sourceTree = "<group>"; };
+		5A179EAB0C264F81A3BE61A7 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		E8E84443AD9442758640DF0C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +50,7 @@
 				1FABE6FC1644F1C800663C22 /* UIKit.framework in Frameworks */,
 				1FABE6FE1644F1C800663C22 /* Foundation.framework in Frameworks */,
 				1FABE7001644F1C800663C22 /* CoreGraphics.framework in Frameworks */,
+				365C1AA3A88D4153B0F9745A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,10 +60,10 @@
 		1FABE6EC1644F1C800663C22 = {
 			isa = PBXGroup;
 			children = (
-				1FABE7281644F86300663C22 /* YISwipeShiftCaret */,
 				1FABE7011644F1C800663C22 /* YISwipeShiftCaretDemo */,
 				1FABE6FA1644F1C800663C22 /* Frameworks */,
 				1FABE6F81644F1C800663C22 /* Products */,
+				5A179EAB0C264F81A3BE61A7 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +81,7 @@
 				1FABE6FB1644F1C800663C22 /* UIKit.framework */,
 				1FABE6FD1644F1C800663C22 /* Foundation.framework */,
 				1FABE6FF1644F1C800663C22 /* CoreGraphics.framework */,
+				E8E84443AD9442758640DF0C /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -117,20 +113,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1FABE7281644F86300663C22 /* YISwipeShiftCaret */ = {
-			isa = PBXGroup;
-			children = (
-				1FABE7291644F86300663C22 /* UITextField+YISwipeShiftCaret.h */,
-				1FABE72A1644F86300663C22 /* UITextField+YISwipeShiftCaret.m */,
-				1FABE72B1644F86300663C22 /* YISwipeShiftCaret.h */,
-				1FABE72C1644F86300663C22 /* YISwipeShiftCaret.m */,
-				1FABE72D1644F86300663C22 /* YISwipeShiftCaretGestureRecognizer.h */,
-				1FABE72E1644F86300663C22 /* YISwipeShiftCaretGestureRecognizer.m */,
-			);
-			name = YISwipeShiftCaret;
-			path = ../YISwipeShiftCaret;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +120,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1FABE71B1644F1C800663C22 /* Build configuration list for PBXNativeTarget "YISwipeShiftCaretDemo" */;
 			buildPhases = (
+				DB47AC0CF60D4CF6A550BBAD /* Check Pods Manifest.lock */,
 				1FABE6F31644F1C800663C22 /* Sources */,
 				1FABE6F41644F1C800663C22 /* Frameworks */,
 				1FABE6F51644F1C800663C22 /* Resources */,
+				FF3F16EF2DFA46E9B91A0FC0 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,6 +176,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DB47AC0CF60D4CF6A550BBAD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		FF3F16EF2DFA46E9B91A0FC0 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1FABE6F31644F1C800663C22 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -200,9 +215,6 @@
 				1FABE7081644F1C800663C22 /* main.m in Sources */,
 				1FABE70C1644F1C800663C22 /* AppDelegate.m in Sources */,
 				1FABE7181644F1C800663C22 /* ViewController.m in Sources */,
-				1FABE72F1644F86300663C22 /* UITextField+YISwipeShiftCaret.m in Sources */,
-				1FABE7301644F86300663C22 /* YISwipeShiftCaret.m in Sources */,
-				1FABE7311644F86300663C22 /* YISwipeShiftCaretGestureRecognizer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +292,7 @@
 		};
 		1FABE71C1644F1C800663C22 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A179EAB0C264F81A3BE61A7 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YISwipeShiftCaretDemo/YISwipeShiftCaretDemo-Prefix.pch";
@@ -291,6 +304,7 @@
 		};
 		1FABE71D1644F1C800663C22 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A179EAB0C264F81A3BE61A7 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "YISwipeShiftCaretDemo/YISwipeShiftCaretDemo-Prefix.pch";

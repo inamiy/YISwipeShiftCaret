@@ -8,27 +8,17 @@
 
 #import "YISwipeShiftCaret.h"
 #import "YISwipeShiftCaretGestureRecognizer.h"
+#import "JRSwizzle.h"
 #import <objc/runtime.h>
 
 
 @implementation YISwipeShiftCaret
 
-+ (void)swizzleSelector:(SEL)oldSel withSelector:(SEL)newSel forClass:(Class)c
-{
-    Method oldMethod = class_getInstanceMethod(c, oldSel);
-    Method newMethod = class_getInstanceMethod(c, newSel);
-    
-    if(class_addMethod(c, oldSel, method_getImplementation(newMethod), method_getTypeEncoding(newMethod)))
-        class_replaceMethod(c, newSel, method_getImplementation(oldMethod), method_getTypeEncoding(oldMethod));
-    else
-        method_exchangeImplementations(oldMethod, newMethod);
-}
-
 + (void)install;
 {
-    [YISwipeShiftCaret swizzleSelector:@selector(becomeFirstResponder)
-                          withSelector:@selector(yi_becomeFirstResponder)
-                              forClass:[UIView class]];
+    [UIView jr_swizzleMethod:@selector(becomeFirstResponder)
+                  withMethod:@selector(yi_becomeFirstResponder)
+                       error:NULL];
 }
 
 @end

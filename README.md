@@ -28,6 +28,10 @@ How to use
 
 ```
 
+Acknowledgement
+---------------
+Main idea of this project is from [r-plus/SwipeShiftCaret](https://github.com/r-plus/SwipeShiftCaret).
+
 License
 -------
 `YISwipeShiftCaret` is available under the [Beerware](http://en.wikipedia.org/wiki/Beerware) license.
